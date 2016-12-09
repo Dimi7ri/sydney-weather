@@ -1,0 +1,90 @@
+<template name="fivedaysweather">
+<div class="container">
+		<div class="row">
+			<div class="col-sm-6">
+				<div id="card" class="weater">
+					<div class="city-selected">
+						<article>
+
+							<div class="info">
+								<div>{{cityName}}</div>
+								<div class="night">{{description}}</div>
+								<div class="cityName">Rest of {{dayName}}</div>
+								<div class="night">{{time}}</div>
+								<div class="temp">{{temperature}}°C</div>
+
+								<div class="wind">
+									<span>{{windSpeed}} km/h</span>
+								</div>
+							</div>
+
+							<div class="icon">
+								<img src="{{icon}}" alt="weather-icon">
+							</div>
+
+						</article>
+						
+						<figure style="background-image: url(https://media-cdn.tripadvisor.com/media/photo-s/03/9b/2e/15/sydney.jpg)"></figure>
+					</div>
+
+					<div class="days">
+						<div class="row row-no-gutter">
+
+							<div class="col-md-3">
+								<div class="day">
+									<h1>{{dayName1}}</h1>								
+										<div class="info">
+											<div >{{description1}}</div>
+										</div>
+									<div class="icon">
+										<img src="{{icon1}}" alt="weather-icon">
+									</div>										
+								</div>
+							</div>
+
+							<div class="col-md-3">
+								<div class="day">
+									<h1>{{dayName2}}</h1>								
+										<div class="info">
+											<div >{{description2}}</div>
+										</div>
+									<div class="icon">
+										<img src="{{icon2}}" alt="weather-icon">
+									</div>										
+								</div>
+							</div>
+
+
+							<div class="col-md-3">
+								<div class="day">
+									<h1>{{dayName3}}</h1>								
+										<div class="info">
+											<div >{{description3}}</div>
+										</div>
+									<div class="icon">
+										<img src="{{icon3}}" alt="weather-icon">
+									</div>										
+								</div>
+							</div>
+
+							<div class="col-md-3">
+								<div class="day">
+									<h1>{{dayName4}}</h1>
+										<div class="info">
+											<div >{{description4}}</div>
+										</div>
+									<div class="icon">
+										<img src="{{icon4}}" alt="weather-icon">
+									</div>
+								</div>
+							</div>
+
+						</div>
+					</div>
+
+				</div>
+			</div>
+		</div>
+	</div>
+
+</template>
