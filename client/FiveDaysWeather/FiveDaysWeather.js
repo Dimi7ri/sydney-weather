@@ -20,9 +20,10 @@ Template.fivedaysweather.helpers({
     		return Session.get('SydneyFiveDaysForecast').list[0].weather[0].description;
     },
     temperature: function(){
- 		if(Session.get('SydneyFiveDaysForecast'))   	
+ 		if(Session.get('SydneyFiveDaysForecast')){  	
     		var temp = Session.get('SydneyFiveDaysForecast').list[0].main.temp;
     		return temp.toFixed(1);
+    	}	
     },
     time: function(){
     	if(Session.get('SydneyFiveDaysForecast')){
