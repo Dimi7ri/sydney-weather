@@ -1,6 +1,5 @@
 Template.fivedaysweather.onCreated(function(){       
 	Meteor.call('getSydneyFiveDaysForecast', function(error, results) {
-		console.log(results.content);
         Session.set('SydneyFiveDaysForecast',JSON.parse(results.content));
     });    	
 });
@@ -20,7 +19,8 @@ Template.fivedaysweather.helpers({
     },
     temperature: function(){
  		if(Session.get('SydneyFiveDaysForecast'))   	
-    		return Session.get('SydneyFiveDaysForecast').list[0].main.temp;
+    		var temp = Session.get('SydneyFiveDaysForecast').list[0].main.temp;
+    		return temp.toFixed(1);
     },
     time: function(){
     	if(Session.get('SydneyFiveDaysForecast')){
@@ -57,7 +57,7 @@ Template.fivedaysweather.helpers({
     },
     dayName1: function(){
     	if(Session.get('SydneyFiveDaysForecast')){    	
-			var a = new Date(Session.get('SydneyFiveDaysForecast').list[1].dt*1000)
+			var a = new Date(Session.get('SydneyFiveDaysForecast').list[4].dt*1000)
 			var weekday = new Array(7);
 			weekday[0]=  "Sunday";
 			weekday[1] = "Monday";
@@ -73,7 +73,7 @@ Template.fivedaysweather.helpers({
     },  
     dayName2: function(){
     	if(Session.get('SydneyFiveDaysForecast')){    	
-			var a = new Date(Session.get('SydneyFiveDaysForecast').list[2].dt*1000)
+			var a = new Date(Session.get('SydneyFiveDaysForecast').list[12].dt*1000)
 			var weekday = new Array(7);
 			weekday[0]=  "Sunday";
 			weekday[1] = "Monday";
@@ -89,7 +89,7 @@ Template.fivedaysweather.helpers({
     },   
     dayName3: function(){
     	if(Session.get('SydneyFiveDaysForecast')){    	
-			var a = new Date(Session.get('SydneyFiveDaysForecast').list[3].dt*1000)
+			var a = new Date(Session.get('SydneyFiveDaysForecast').list[20].dt*1000)
 			var weekday = new Array(7);
 			weekday[0]=  "Sunday";
 			weekday[1] = "Monday";
@@ -105,7 +105,7 @@ Template.fivedaysweather.helpers({
     },
     dayName4: function(){
     	if(Session.get('SydneyFiveDaysForecast')){    	
-			var a = new Date(Session.get('SydneyFiveDaysForecast').list[4].dt*1000)
+			var a = new Date(Session.get('SydneyFiveDaysForecast').list[28].dt*1000)
 			var weekday = new Array(7);
 			weekday[0]=  "Sunday";
 			weekday[1] = "Monday";
@@ -121,35 +121,35 @@ Template.fivedaysweather.helpers({
     },  
     description1: function(){
 	    if(Session.get('SydneyFiveDaysForecast'))
-    		return Session.get('SydneyFiveDaysForecast').list[1].weather[0].description;
+    		return Session.get('SydneyFiveDaysForecast').list[4].weather[0].description;
     },
     description2: function(){
 	    if(Session.get('SydneyFiveDaysForecast'))
-    		return Session.get('SydneyFiveDaysForecast').list[2].weather[0].description;
+    		return Session.get('SydneyFiveDaysForecast').list[12].weather[0].description;
     },
     description3: function(){
 	    if(Session.get('SydneyFiveDaysForecast'))
-    		return Session.get('SydneyFiveDaysForecast').list[3].weather[0].description;
+    		return Session.get('SydneyFiveDaysForecast').list[20].weather[0].description;
     },
     description4: function(){
 	    if(Session.get('SydneyFiveDaysForecast'))
-    		return Session.get('SydneyFiveDaysForecast').list[4].weather[0].description;
+    		return Session.get('SydneyFiveDaysForecast').list[28].weather[0].description;
     },
     icon1: function() {
     	if(Session.get('SydneyFiveDaysForecast'))
-    		return 'http://openweathermap.org/img/w/' + Session.get('SydneyFiveDaysForecast').list[1].weather[0].icon + '.png';
+    		return 'http://openweathermap.org/img/w/' + Session.get('SydneyFiveDaysForecast').list[4].weather[0].icon + '.png';
     },
     icon2: function() {
     	if(Session.get('SydneyFiveDaysForecast'))
-    		return 'http://openweathermap.org/img/w/' + Session.get('SydneyFiveDaysForecast').list[2].weather[0].icon + '.png';
+    		return 'http://openweathermap.org/img/w/' + Session.get('SydneyFiveDaysForecast').list[12].weather[0].icon + '.png';
     },
     icon3: function() {
     	if(Session.get('SydneyFiveDaysForecast'))
-    		return 'http://openweathermap.org/img/w/' + Session.get('SydneyFiveDaysForecast').list[3].weather[0].icon + '.png';
+    		return 'http://openweathermap.org/img/w/' + Session.get('SydneyFiveDaysForecast').list[20].weather[0].icon + '.png';
     },
     icon4: function() {
     	if(Session.get('SydneyFiveDaysForecast'))
-    		return 'http://openweathermap.org/img/w/' + Session.get('SydneyFiveDaysForecast').list[4].weather[0].icon + '.png';
+    		return 'http://openweathermap.org/img/w/' + Session.get('SydneyFiveDaysForecast').list[28].weather[0].icon + '.png';
     }               
 
 });
