@@ -1,5 +1,7 @@
 Template.fivedaysweather.onCreated(function(){       
+		//Call server method	
 	Meteor.call('getSydneyFiveDaysForecast', function(error, results) {
+			//Parse content to JSON format and store into a session variable.
         Session.set('SydneyFiveDaysForecast',JSON.parse(results.content));
     });    	
 });
@@ -24,6 +26,7 @@ Template.fivedaysweather.helpers({
     },
     time: function(){
     	if(Session.get('SydneyFiveDaysForecast')){
+    			//Convert Unix timestamp to Hours and Minutes.
 			var a = new Date(Session.get('SydneyFiveDaysForecast').list[0].dt * 1000);
 			var hour = a.getHours();
 			var min =  "0"+a.getMinutes() ;
@@ -32,7 +35,8 @@ Template.fivedaysweather.helpers({
 		}  
     },
     dayName: function(){
-    	if(Session.get('SydneyFiveDaysForecast')){    	
+    	if(Session.get('SydneyFiveDaysForecast')){ 
+    			//Convert Unix timestamp to Date of the week and name it.   	
 			var a = new Date(Session.get('SydneyFiveDaysForecast').list[0].dt*1000)
 			var weekday = new Array(7);
 			weekday[0]=  "Sunday";

@@ -25,8 +25,9 @@
 }
 /* notFound CSS Ends here */
 
+/* FiveDaysWeather CSS Begins here */
 body {
-    background: #f2f2f2;
+  background: #f2f2f2;
   width: 100%;
   height: 100%;
   margin: 0;
@@ -39,8 +40,6 @@ body {
   margin-right: 0;
   margin-left: 0;
 }
-
-
 
 #card {
   background: #fff;
@@ -90,7 +89,6 @@ article {
   align-items: flex-start;
 }
 
-
 .city span {
   color: #fff;
   font-size: 23px;
@@ -122,14 +120,12 @@ article {
 
 }
 
-
 .temp {
   font-size: 73px;
   display: block;
   position: relative;
   font-weight: bold;
 }
-
 
 .wind span {
   font-size: 13px;
@@ -139,7 +135,6 @@ article {
 .city-selected:hover figure {
   opacity: 0.6;
 }
-
 
 figure {
     width: 100%;
@@ -182,4 +177,4 @@ figure {
   text-transform: uppercase;
   margin-top: 10px;
 }
-
+/* FiveDaysWeather CSS Ends here */
